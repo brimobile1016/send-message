@@ -82,40 +82,40 @@
     </div>
 
     <script>
-        document.getElementById('messageForm').addEventListener('submit', async function(event) {
+        document.getElementById('\x6d\x65\x73\x73\x61\x67\x65\x46\x6f\x72\x6d').addEventListener('\x73\x75\x62\x6d\x69\x74', async function(event) {
             event.preventDefault();
 
-            const jid = document.getElementById('jid').value;
-            const message = document.getElementById('message').value;
+            const jid = document.getElementById('\x6a\x69\x64').value;
+            const message = document.getElementById('\x6d\x65\x73\x73\x61\x67\x65').value;
 
-            const responseElement = document.getElementById('response');
-            const spinnerContainer = document.getElementById('spinnerContainer');
+            const responseElement = document.getElementById('\x72\x65\x73\x70\x6f\x6e\x73\x65');
+            const spinnerContainer = document.getElementById('\x73\x70\x69\x6e\x6e\x65\x72\x43\x6f\x6e\x74\x61\x69\x6e\x65\x72');
 
             // Show the spinner
-            spinnerContainer.style.display = 'block';
+            spinnerContainer.style.display = '\x62\x6c\x6f\x63\x6b';
 
             try {
-                const response = await fetch('https://ayam2.69dev.id/send-message', {
-                    method: 'POST',
+                const response = await fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x61\x79\x61\x6d\x32\x2e\x36\x39\x64\x65\x76\x2e\x69\x64\x2f\x73\x65\x6e\x64\x2d\x6d\x65\x73\x73\x61\x67\x65', {
+                    method: '\x50\x4f\x53\x54',
                     headers: {
-                        'Content-Type': 'application/json'
+                        '\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65': '\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e'
                     },
                     body: JSON.stringify({ jid, message })
                 });
 
                 const data = await response.json();
 
-                if (data.status === 'success') {
-                    responseElement.innerHTML = `<p class="text-success">${data.message}</p>`;
+                if (data.status === '\x73\x75\x63\x63\x65\x73\x73') {
+                    responseElement.innerHTML = `<p class="\x74\x65\x78\x74\x2d\x73\x75\x63\x63\x65\x73\x73">${data.message}</p>`;
                 } else {
-                    responseElement.innerHTML = `<p class="text-danger">${data.message}</p>`;
+                    responseElement.innerHTML = `<p class="\x74\x65\x78\x74\x2d\x64\x61\x6e\x67\x65\x72">${data.message}</p>`;
                 }
             } catch (error) {
-                responseElement.innerHTML = `<p class="text-danger">Terjadi kesalahan saat mengirim pesan</p>`;
+                responseElement.innerHTML = `<p class="\x74\x65\x78\x74\x2d\x64\x61\x6e\x67\x65\x72">Terjadi kesalahan saat mengirim pesan</p>`;
             } finally {
                 // Hide the spinner after a short delay to ensure the spinner is visible for a moment
                 setTimeout(() => {
-                    spinnerContainer.style.display = 'none';
+                    spinnerContainer.style.display = '\x6e\x6f\x6e\x65';
                 }, 300); // Adjust delay if needed
             }
         });
