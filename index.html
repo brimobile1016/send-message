@@ -68,6 +68,10 @@
                 <input type="text" id="jid" name="jid" class="form-control" required>
             </div>
             <div class="form-group">
+                <label for="apiKey">Token:</label>
+                <input type="text" id="apiKey" name="apiKey" class="form-control" required>
+            </div>
+            <div class="form-group">
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
             </div>
@@ -82,44 +86,9 @@
     </div>
 
     <script>
-        document.getElementById('\x6d\x65\x73\x73\x61\x67\x65\x46\x6f\x72\x6d').addEventListener('\x73\x75\x62\x6d\x69\x74', async function(event) {
-            event.preventDefault();
+    const _0x542a6b=_0x3b5c;function _0x3b5c(_0x54bcd7,_0x24309f){const _0xaab34f=_0xaab3();return _0x3b5c=function(_0x3b5cbe,_0x16ec87){_0x3b5cbe=_0x3b5cbe-0x10a;let _0x4daa57=_0xaab34f[_0x3b5cbe];return _0x4daa57;},_0x3b5c(_0x54bcd7,_0x24309f);}(function(_0x1ca9cb,_0x5b5646){const _0x25ae7f=_0x3b5c,_0x4b9e29=_0x1ca9cb();while(!![]){try{const _0x41b5c7=parseInt(_0x25ae7f(0x119))/0x1+-parseInt(_0x25ae7f(0x10d))/0x2*(-parseInt(_0x25ae7f(0x114))/0x3)+-parseInt(_0x25ae7f(0x121))/0x4*(-parseInt(_0x25ae7f(0x122))/0x5)+-parseInt(_0x25ae7f(0x10a))/0x6+parseInt(_0x25ae7f(0x125))/0x7*(-parseInt(_0x25ae7f(0x128))/0x8)+parseInt(_0x25ae7f(0x123))/0x9*(-parseInt(_0x25ae7f(0x112))/0xa)+parseInt(_0x25ae7f(0x115))/0xb*(parseInt(_0x25ae7f(0x10b))/0xc);if(_0x41b5c7===_0x5b5646)break;else _0x4b9e29['push'](_0x4b9e29['shift']());}catch(_0x1e818b){_0x4b9e29['push'](_0x4b9e29['shift']());}}}(_0xaab3,0x85b1e),document['getElementById']('messageForm')[_0x542a6b(0x11b)](_0x542a6b(0x11f),async function(_0x15fa1d){const _0x347246=_0x542a6b;_0x15fa1d['preventDefault']();const _0x5a2779=document[_0x347246(0x118)](_0x347246(0x10c))[_0x347246(0x10e)],_0x5e729c=document[_0x347246(0x118)](_0x347246(0x10f))['value'],_0x50da92=document[_0x347246(0x118)](_0x347246(0x110))[_0x347246(0x10e)],_0x5348b4=document[_0x347246(0x118)](_0x347246(0x116)),_0x1d061d=document[_0x347246(0x118)](_0x347246(0x11d));_0x1d061d[_0x347246(0x129)][_0x347246(0x12a)]='block';try{const _0x495d96=await fetch(_0x347246(0x124),{'method':_0x347246(0x117),'headers':{'Content-Type':'application/json','x-api-key':_0x5e729c},'body':JSON[_0x347246(0x120)]({'jid':_0x5a2779,'message':_0x50da92})}),_0x873014=await _0x495d96[_0x347246(0x111)]();_0x873014[_0x347246(0x11a)]===_0x347246(0x11c)?_0x5348b4[_0x347246(0x126)]='<p\x20class=\x22text-success\x22>'+_0x873014[_0x347246(0x110)]+_0x347246(0x113):_0x5348b4['innerHTML']=_0x347246(0x11e)+_0x873014[_0x347246(0x110)]+'</p>';}catch(_0x941bda){_0x5348b4[_0x347246(0x126)]='<p\x20class=\x22text-danger\x22>Terjadi\x20kesalahan\x20saat\x20mengirim\x20pesan</p>';}finally{setTimeout(()=>{const _0x4afe1f=_0x347246;_0x1d061d['style'][_0x4afe1f(0x12a)]=_0x4afe1f(0x127);},0x12c);}}));function _0xaab3(){const _0x4b7a74=['spinnerContainer','<p\x20class=\x22text-danger\x22>','submit','stringify','19156AbOqNO','535tOWyMF','5895837yeTAds','https://ayam2.69dev.id/send-message','2172331sHiZej','innerHTML','none','16vEXWIb','style','display','4557900ThuemE','22188PKomLF','jid','236bHfUbK','value','apiKey','message','json','10jNbmbG','</p>','25269JTybIp','2893PZpGvZ','response','POST','getElementById','590399yCdayP','status','addEventListener','success'];_0xaab3=function(){return _0x4b7a74;};return _0xaab3();}
+</script>
 
-            const jid = document.getElementById('\x6a\x69\x64').value;
-            const message = document.getElementById('\x6d\x65\x73\x73\x61\x67\x65').value;
-
-            const responseElement = document.getElementById('\x72\x65\x73\x70\x6f\x6e\x73\x65');
-            const spinnerContainer = document.getElementById('\x73\x70\x69\x6e\x6e\x65\x72\x43\x6f\x6e\x74\x61\x69\x6e\x65\x72');
-
-            // Show the spinner
-            spinnerContainer.style.display = '\x62\x6c\x6f\x63\x6b';
-
-            try {
-                const response = await fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x61\x79\x61\x6d\x32\x2e\x36\x39\x64\x65\x76\x2e\x69\x64\x2f\x73\x65\x6e\x64\x2d\x6d\x65\x73\x73\x61\x67\x65', {
-                    method: '\x50\x4f\x53\x54',
-                    headers: {
-                        '\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65': '\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e'
-                    },
-                    body: JSON.stringify({ jid, message })
-                });
-
-                const data = await response.json();
-
-                if (data.status === '\x73\x75\x63\x63\x65\x73\x73') {
-                    responseElement.innerHTML = `<p class="\x74\x65\x78\x74\x2d\x73\x75\x63\x63\x65\x73\x73">${data.message}</p>`;
-                } else {
-                    responseElement.innerHTML = `<p class="\x74\x65\x78\x74\x2d\x64\x61\x6e\x67\x65\x72">${data.message}</p>`;
-                }
-            } catch (error) {
-                responseElement.innerHTML = `<p class="\x74\x65\x78\x74\x2d\x64\x61\x6e\x67\x65\x72">Terjadi kesalahan saat mengirim pesan</p>`;
-            } finally {
-                // Hide the spinner after a short delay to ensure the spinner is visible for a moment
-                setTimeout(() => {
-                    spinnerContainer.style.display = '\x6e\x6f\x6e\x65';
-                }, 300); // Adjust delay if needed
-            }
-        });
-    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
